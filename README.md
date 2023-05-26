@@ -6,7 +6,7 @@
 
 # A04-Alimentador Automático
 
-Integrantes: Cleiton Lima, Matheus Adaniya, Wilson Testoni, Gabriel Italo.
+# Integrantes: Cleiton Lima, Matheus Adaniya, Wilson Testoni, Gabriel Italo.
 
-Professor Orientador: Adriano F. Valente
+# Professor Orientador: Adriano F. Valente
 
