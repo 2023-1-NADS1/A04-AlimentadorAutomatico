@@ -10,3 +10,6 @@
 
 # Professor Orientador: Adriano F. Valente
 
+# Descrição
+
+Fornecer alimentos seguros e saudáveis fracionados regularmente para cachorros em situação de rua, tendo em vista a priorização do bem-estar dos animais. Identificar os cães através de fotos geradas pela câmera integrada da ESP32 e fazer o envio das mesmas para as ONGs, instituições e petshops parceiros que estejam próximos, assim podendo fazer uma avaliação prévia do estado dos cachorros para que eles possam ser resgatados e tratados.
