@@ -37,4 +37,3 @@ Resgate e tratamento dos animais identificados.<br>
   &emsp;|-->Wokwi<br>
   &emsp;  |-->Esquematica_do_trabalho_WOkwI.png<br>
   &emsp;  |-->Link_Wokwi.txt<br>
-|readme.md<br>
