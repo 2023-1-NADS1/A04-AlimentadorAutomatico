@@ -22,3 +22,5 @@ Liberação de porções de ração pré-definidas pelo alimentador;
 Foto feita e enviada pelo ESP32 - cam para a nuvem (Google Drive);
 Analise das fotos pelas ONGs, instituições e petshops parceiros;
 Resgate e tratamento dos animais identificados.
+
+#pastas
