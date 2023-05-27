@@ -17,11 +17,11 @@ Fornecer alimentos seguros e saudáveis fracionados regularmente para cachorros 
 
 # O que faz
 
-Identificação da proximidade do cachorro com o sensor de distância ultrassônico;
-Liberação de porções de ração pré-definidas pelo alimentador;
-Foto feita e enviada pelo ESP32 - cam para a nuvem (Google Drive);
-Analise das fotos pelas ONGs, instituições e petshops parceiros;
-Resgate e tratamento dos animais identificados.
+Identificação da proximidade do cachorro com o sensor de distância ultrassônico;<br>
+Liberação de porções de ração pré-definidas pelo alimentador;<br>
+Foto feita e enviada pelo ESP32 - cam para a nuvem (Google Drive);<br>
+Analise das fotos pelas ONGs, instituições e petshops parceiros;<br>
+Resgate e tratamento dos animais identificados.<br>
 
 # Pastas
 -Raiz
@@ -29,7 +29,7 @@ Resgate e tratamento dos animais identificados.
 |-->imagens
  |Esquematica_do_trabalho_WOkwI.png
 |-->src
- |-->alimentador-automatico
+ |-->Alimentador-automatico
    |alimentador-automatico.ino
    |Base64.cpp
    |Base64.h
@@ -37,3 +37,16 @@ Resgate e tratamento dos animais identificados.
    |Esquematica_do_trabalho_WOkwI.png
    |Link_Wokwi.txt 
 
+-Raiz<br>
+|<br>
+|-->imagens<br>
+  &emsp;|-->Esquematica_do_trabalho_WOkwI.png<br>
+|-->src<br>
+  &emsp;|-->Alimentador-automatico<br>
+  &emsp;  |-->alimentador-automatico.ino<br>
+  &emsp;  |-->Base64.cpp<br>
+  &emsp;  |-->Base64.h<br>
+  &emsp;|-->Wokwi<br>
+  &emsp;  |-->Esquematica_do_trabalho_WOkwI.png<br>
+  &emsp;  |-->Link_Wokwi.txt<br>
+|readme.md<br>
