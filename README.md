@@ -20,8 +20,6 @@ Fornecer alimentos seguros e saudáveis fracionados regularmente para cachorros 
 Identificação da proximidade do cachorro com o sensor de distância ultrassônico;<br>
 Liberação de porções de ração pré-definidas pelo alimentador;<br>
 Foto feita e enviada pelo ESP32 - cam para a nuvem (Google Drive);<br>
-Analise das fotos pelas ONGs, instituições e petshops parceiros;<br>
-Resgate e tratamento dos animais identificados.<br>
 
 # Pastas
 
