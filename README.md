@@ -8,7 +8,7 @@
 
 # Integrantes: Cleiton Lima, Matheus Adaniya, Wilson Testoni, Gabriel Italo.
 
-# Professor Orientador: Adriano F. Valente
+# Professor Orientadores: Adriano F. Valente e 
 
 # Descrição
 
