@@ -24,18 +24,6 @@ Analise das fotos pelas ONGs, instituições e petshops parceiros;<br>
 Resgate e tratamento dos animais identificados.<br>
 
 # Pastas
--Raiz
-|
-|-->imagens
- |Esquematica_do_trabalho_WOkwI.png
-|-->src
- |-->Alimentador-automatico
-   |alimentador-automatico.ino
-   |Base64.cpp
-   |Base64.h
- |-->wokwi
-   |Esquematica_do_trabalho_WOkwI.png
-   |Link_Wokwi.txt 
 
 -Raiz<br>
 |<br>
