@@ -20,7 +20,7 @@ Fornecer alimentos seguros e saudáveis, fracionados regularmente para cachorros
 * Identifica a proximidade do cachorro com o alimentador usando o Sensor de Distância Ultrassônico;<br>
 * Uma foto é feita e enviada para a nuvem (Google Drive) pelo ESP32-CAM;<br>
 * Libera uma porção de ração feita pelo alimentador, que é composto por um Motor de Passo;<br>
-<br><br>
+
 
 ## 🛠 Estrutura das pastas
 
