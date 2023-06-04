@@ -1,4 +1,4 @@
-//======================================== Bibliotecas usadas.
+// Bibliotecas usadas
 #include <Stepper.h>
 #include <WiFi.h>
 #include <WiFiClientSecure.h>
@@ -7,7 +7,7 @@
 #include "Base64.h"
 #include "esp_camera.h"
 
-//======================================== Definição dos pinos do ESP32-CAM
+// Definicao dos pinos do ESP32 CAM
 #define PWDN_GPIO_NUM     32
 #define RESET_GPIO_NUM    -1
 #define XCLK_GPIO_NUM      0
@@ -26,54 +26,54 @@
 #define HREF_GPIO_NUM     23
 #define PCLK_GPIO_NUM     22
 
-//====================================== Números dos pinos usados pelo Sensor de distância.
-const int TRIG = 12;
-const int ECHO = 13;
+// Numeros dos pinos usados pelo Sensor de distancia.
+const int trig = 12;
+const int echo = 13;
 
-//===================================== Variáveis para o calculo da distância em CM (Sensor de Distância).
-float duracaoPulso;
+// Variaveis para o calculo da distancia em CM 
+int duracaoPulso;
 float velocidadeDoSom;
 float distanciaCm;
 
-//=================================== Configurações do Motor de passo.
-//pinos usados (4, 2, 14, 15).
-// -----------(IN1, IN2, IN3, IN4).
+// Configuracoes do Motor de passo.
+// pinos usados 4 2 14 15
+// IN1 IN2 IN3 IN4
 const int passos = 2048; 
 const int noventaGraus = 512;
 Stepper myStepper(passos, 4, 14, 2, 15);
 
-//======================================== Usuário e Senha do Wi-fi.
+// Usuario e Senha do Wifi.
 const char* ssid = "CKK";
 const char* password = "senha123";
 
-//======================================== 
+//
 String myDeploymentID = "AKfycbzLulu1xOtx6XpRuF7twXN1UYSsEqm8_V5KryekEbmcvCwuouLdhABfIf4TEdduXdy8Zw";
 String myMainFolderName = "ESP32-CAM";
 
-//======================================== 
+// Variaveis usadas para as pausas no loop
 unsigned long comecoTempo1 = 0;
 unsigned long comecoTempo2 = 0;
 const int intervalo1 = 3000;
 const int intervalo2 = 30000;
-//======================================== 
+//
 
 WiFiClientSecure client;
 
-//======================================== Funções
+// Funcoes
 
 void pulsoUltrassonico() {
-  digitalWrite(TRIG, HIGH); // Envia o pulso ultrassônico
+  digitalWrite(trig, HIGH); // Envia o pulso ultrassonico
   delayMicroseconds(10);
-  digitalWrite(TRIG, LOW); // Corta o pulso ultrassônico
+  digitalWrite(trig, LOW); // Corta o pulso ultrassonico
 }
 
 void sentidoHorario() {
-  myStepper.setSpeed(8); // Velocidade em rpm
+  myStepper.setSpeed(12); // Velocidade em rpm
   myStepper.step(noventaGraus); 
 }
 
 void sentidoAntiHorario() {
-  myStepper.setSpeed(8); // Velocidade em rpm
+  myStepper.setSpeed(12); 
   myStepper.step(-noventaGraus); 
 }
 
@@ -82,7 +82,7 @@ void tirandoEEnviandoFotos() {
   
   client.setInsecure();
 
-  //------------------------------------ Conexão, captura e envio de fotos para o google drive 
+  //  Conexao, captura e envio de fotos para o google drive 
   if (client.connect(host, 443)) {
     
     for (int i = 0; i <= 3; i++) {
@@ -105,7 +105,7 @@ void tirandoEEnviandoFotos() {
       return;
     } 
 
-    //............ Enviando a foto para o google drive
+    // Enviando a foto para o google drive
     String url = "/macros/s/" + myDeploymentID + "/exec?folder=" + myMainFolderName;
 
     client.println("POST " + url + " HTTP/1.1");
@@ -138,7 +138,7 @@ void tirandoEEnviandoFotos() {
 
     esp_camera_fb_return(fb);
 
-    //.............................. 
+    //
     long int StartTime = millis();
     while (!client.available()) {
       Serial.print(".");
@@ -172,12 +172,9 @@ void setup() {
 
   WiFi.begin(ssid, password);
   
-  //---------------------------------------- 
-
-  pinMode(TRIG, OUTPUT); // Configuração do PINO do ESP32-CAM(12) como saida para o TRIGGER do sensor.
-  pinMode(ECHO, INPUT); // Configuração do PINO do ESP32-CAM(13) como entrada para o ECHO do sensor.
-
-  //---------------------------------------- 
+  pinMode(trig, OUTPUT); 
+  pinMode(echo, INPUT); 
+  digitalWrite(trig, LOW);
   
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
@@ -211,7 +208,7 @@ void setup() {
     config.fb_count = 1;
   }
   
-  // Inicialização da câmera 
+  // Inicializacao da camera 
   esp_err_t err = esp_camera_init(&config);
   if (err != ESP_OK) {
     delay(1000);
@@ -220,7 +217,7 @@ void setup() {
 
   sensor_t * s = esp_camera_sensor_get();
 
-  // Detalhes das resoluções da câmera:
+  // Detalhes das resolucoes da camera
   // -UXGA   = 1600 x 1200 pixels
   // -SXGA   = 1280 x 1024 pixels
   // -XGA    = 1024 x 768  pixels
@@ -230,20 +227,20 @@ void setup() {
   // -QVGA   = 320 x 240   pixels
   // -HQVGA  = 240 x 160   pixels
   // -QQVGA  = 160 x 120   pixels
-  s->set_framesize(s, FRAMESIZE_SXGA);  //--> UXGA|SXGA|XGA|SVGA|VGA|CIF|QVGA|HQVGA|QQVGA
+  s->set_framesize(s, FRAMESIZE_SXGA); 
 
   delay(2000);
-} //------------------------------ FIM DO SETUP
+} 
 
 
 void loop() {
 
   pulsoUltrassonico();
-  duracaoPulso = pulseIn(ECHO, HIGH); // Função que calcula o pulso saida (trigger)  até o de retorno no (echo) (pulso em microssegundos)
-  velocidadeDoSom = 343; // Metros por segundos
-  distanciaCm = (duracaoPulso / 2.0) * (velocidadeDoSom / 10000); // Calculo para transformar a distância em cm
+  duracaoPulso = pulseIn(echo, HIGH); // Funcao que calcula o tempo do pulso (pulso em microssegundos)
+  velocidadeDoSom = 0.0343; 
+  distanciaCm = (duracaoPulso * velocidadeDoSom) / 2; 
   
-  if(distanciaCm >= 30 && distanciaCm <= 45){
+  if(distanciaCm >= 3 && distanciaCm <= 20) {
     
     tirandoEEnviandoFotos();
 
@@ -251,16 +248,14 @@ void loop() {
 
     comecoTempo1 = millis();
     while (millis() < comecoTempo1 + intervalo1) {
-        // Não há código aqui, é apenas uma pausa de 3s
+        // Nao ha codigo aqui, e apenas uma pausa de 3s
     }
     
     sentidoAntiHorario();
 
     comecoTempo2 = millis();
     while (millis() < comecoTempo2 + intervalo2) {
-      // Não há código aqui, apenas uma pausa de 30s 
+      // Nao ha codigo aqui, apenas uma pausa de 30s 
     }
   }
-
- 
-} //----------------------------------- FIM DO LOOP
+} 
