@@ -31,9 +31,9 @@ const int trig = 12;
 const int echo = 13;
 
 // Variaveis para o calculo da distancia em CM 
-int duracaoPulso;
-float velocidadeDoSom;
-float distanciaCm;
+int duracaoPulso = 0;
+float velocidadeDoSom = 0.0343;
+float distanciaCm = 0;
 
 // Configuracoes do Motor de passo.
 // pinos usados 4 2 14 15
@@ -62,10 +62,12 @@ WiFiClientSecure client;
 
 // Funcoes
 
-void pulsoUltrassonico() {
+void rotinaSensorUltrassonico() {
   digitalWrite(trig, HIGH); // Envia o pulso ultrassonico
   delayMicroseconds(10);
   digitalWrite(trig, LOW); // Corta o pulso ultrassonico
+  duracaoPulso = pulseIn(echo, HIGH); // Funcao que calcula o tempo do pulso (tempo em microssegundos).
+  distanciaCm = (duracaoPulso * velocidadeDoSom) / 2; 
 }
 
 void sentidoHorario() {
@@ -236,10 +238,7 @@ void setup() {
 
 void loop() {
   
-  pulsoUltrassonico();
-  duracaoPulso = pulseIn(echo, HIGH); // Funcao que calcula o tempo do pulso (pulso em microssegundos)
-  velocidadeDoSom = 0.0343; 
-  distanciaCm = (duracaoPulso * velocidadeDoSom) / 2; 
+  rotinaSensorUltrassonico();
   
   if(distanciaCm >= 3 && distanciaCm <= 20) {
     
@@ -259,4 +258,5 @@ void loop() {
       // Nao ha codigo aqui, apenas uma pausa de 30s (tempo para o cachorro comer e nao ser detectado pelo sensor, evitando a liberacao de racao sem parar).
     }
   }
+  
 } 
