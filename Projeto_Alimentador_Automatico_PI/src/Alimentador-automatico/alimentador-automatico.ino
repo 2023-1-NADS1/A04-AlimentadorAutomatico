@@ -53,7 +53,7 @@ const int intervalo2 = 30000;
 const char* ssid = "CKK";
 const char* password = "senha123";
 
-//
+//Credencial para comunicação entre o ESP-32Cam ao Apps Script do Google Drive.
 String myDeploymentID = "AKfycbzLulu1xOtx6XpRuF7twXN1UYSsEqm8_V5KryekEbmcvCwuouLdhABfIf4TEdduXdy8Zw";
 String myMainFolderName = "ESP32-CAM";
 //
@@ -140,7 +140,6 @@ void tirandoEEnviandoFotos() {
 
     esp_camera_fb_return(fb);
 
-    //
     long int StartTime = millis();
     while (!client.available()) {
       Serial.print(".");
