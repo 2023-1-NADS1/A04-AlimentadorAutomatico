@@ -43,6 +43,12 @@ Stepper myStepper(passosPorRevolucao, 4, 14, 2, 15);
 float anguloDesejado = 90;
 float passosAnguloDesejado = (passosPorRevolucao * anguloDesejado) / 360;
 
+// Variaveis usadas para as pausas no loop
+unsigned long comecoTempo1 = 0;
+unsigned long comecoTempo2 = 0;
+const int intervalo1 = 3000;
+const int intervalo2 = 30000;
+
 // Usuario e Senha do Wifi.
 const char* ssid = "CKK";
 const char* password = "senha123";
@@ -50,12 +56,6 @@ const char* password = "senha123";
 //
 String myDeploymentID = "AKfycbzLulu1xOtx6XpRuF7twXN1UYSsEqm8_V5KryekEbmcvCwuouLdhABfIf4TEdduXdy8Zw";
 String myMainFolderName = "ESP32-CAM";
-
-// Variaveis usadas para as pausas no loop
-unsigned long comecoTempo1 = 0;
-unsigned long comecoTempo2 = 0;
-const int intervalo1 = 3000;
-const int intervalo2 = 30000;
 //
 
 WiFiClientSecure client;
