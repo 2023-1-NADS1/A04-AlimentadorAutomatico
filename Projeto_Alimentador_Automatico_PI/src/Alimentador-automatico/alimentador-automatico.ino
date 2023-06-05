@@ -38,9 +38,10 @@ float distanciaCm;
 // Configuracoes do Motor de passo.
 // pinos usados 4 2 14 15
 // IN1 IN2 IN3 IN4
-const int passos = 2048; 
-const int noventaGraus = 512;
-Stepper myStepper(passos, 4, 14, 2, 15);
+const int passosPorRevolucao = 2048; 
+Stepper myStepper(passosPorRevolucao, 4, 14, 2, 15);
+float anguloDesejado = 90;
+float passosAnguloDesejado = (passosPorRevolucao * anguloDesejado) / 360;
 
 // Usuario e Senha do Wifi.
 const char* ssid = "CKK";
@@ -68,13 +69,11 @@ void pulsoUltrassonico() {
 }
 
 void sentidoHorario() {
-  myStepper.setSpeed(12); // Velocidade em rpm
-  myStepper.step(noventaGraus); 
+  myStepper.step(passosAnguloDesejado); 
 }
 
 void sentidoAntiHorario() {
-  myStepper.setSpeed(12); 
-  myStepper.step(-noventaGraus); 
+  myStepper.step(-passosAnguloDesejado); 
 }
 
 void tirandoEEnviandoFotos() {
@@ -176,6 +175,8 @@ void setup() {
   pinMode(echo, INPUT); 
   digitalWrite(trig, LOW);
   
+  myStepper.setSpeed(12);
+  
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
   config.ledc_timer = LEDC_TIMER_0;
@@ -234,7 +235,7 @@ void setup() {
 
 
 void loop() {
-
+  
   pulsoUltrassonico();
   duracaoPulso = pulseIn(echo, HIGH); // Funcao que calcula o tempo do pulso (pulso em microssegundos)
   velocidadeDoSom = 0.0343; 
@@ -248,14 +249,14 @@ void loop() {
 
     comecoTempo1 = millis();
     while (millis() < comecoTempo1 + intervalo1) {
-        // Nao ha codigo aqui, e apenas uma pausa de 3s
+        // Nao ha codigo aqui, e apenas uma pausa de 3s (tempo para racao cair).
     }
     
     sentidoAntiHorario();
 
     comecoTempo2 = millis();
     while (millis() < comecoTempo2 + intervalo2) {
-      // Nao ha codigo aqui, apenas uma pausa de 30s 
+      // Nao ha codigo aqui, apenas uma pausa de 30s (tempo para o cachorro comer e nao ser detectado pelo sensor, evitando a liberacao de racao sem parar).
     }
   }
 } 
