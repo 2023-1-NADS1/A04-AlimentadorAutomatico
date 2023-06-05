@@ -30,12 +30,12 @@ Fornecer alimentos seguros e saudáveis, fracionados regularmente para cachorros
   &emsp;|-->Esquematica_do_trabalho_WOkwI.png<br>
 |-->src<br>
   &emsp;|-->Alimentador-automatico<br>
-  &emsp;    |-->alimentador-automatico.ino<br>
-  &emsp;    |-->Base64.cpp<br>
-  &emsp;    |-->Base64.h<br>
+  &emsp;   |-->alimentador-automatico.ino<br>
+  &emsp;   |-->Base64.cpp<br>
+  &emsp;   |-->Base64.h<br>
   &emsp;|-->Wokwi<br>
-  &emsp;    |-->Esquematica_do_trabalho_WOkwI.png<br>
-  &emsp;    |-->Link_Wokwi.txt<br>
+  &emsp;   |-->Esquematica_do_trabalho_WOkwI.png<br>
+  &emsp;   |-->Link_Wokwi.txt<br>
   
 <b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre o projeto.
 
