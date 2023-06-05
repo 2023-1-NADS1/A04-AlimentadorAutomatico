@@ -62,7 +62,8 @@ WiFiClientSecure client;
 
 // Funcoes
 
-void rotinaSensorUltrassonico() {
+// Rotina para verificar a proximidade do cachorro
+void rotinaSensorUltrassonico() { 
   digitalWrite(trig, HIGH); // Envia o pulso ultrassonico
   delayMicroseconds(10);
   digitalWrite(trig, LOW); // Corta o pulso ultrassonico
@@ -70,11 +71,11 @@ void rotinaSensorUltrassonico() {
   distanciaCm = (duracaoPulso * velocidadeDoSom) / 2; 
 }
 
-void sentidoHorario() {
+void motorSentidoHorario() {
   myStepper.step(passosAnguloDesejado); 
 }
 
-void sentidoAntiHorario() {
+void motorSentidoAntiHorario() {
   myStepper.step(-passosAnguloDesejado); 
 }
 
@@ -244,14 +245,14 @@ void loop() {
     
     tirandoEEnviandoFotos();
 
-    sentidoHorario();
+    motorSentidoHorario();
 
     comecoTempo1 = millis();
     while (millis() < comecoTempo1 + intervalo1) {
         // Nao ha codigo aqui, e apenas uma pausa de 3s (tempo para racao cair).
     }
     
-    sentidoAntiHorario();
+    motorSentidoAntiHorario();
 
     comecoTempo2 = millis();
     while (millis() < comecoTempo2 + intervalo2) {
