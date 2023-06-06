@@ -30,7 +30,7 @@ Fornecer alimentos seguros e saudáveis, fracionados regularmente para cachorros
   &emsp;|-->Esquematica_do_trabalho_WOkwI.png<br>
 |-->src<br>
   &emsp;|-->Alimentador-automatico<br>
-  &emsp; |-->Código_do_Apps_Script_(GoogleDrive)<br>
+  &emsp;|-->Código_do_Apps_Script_(GoogleDrive)<br>
   &emsp; &emsp; |-->Código_Apps_Script<br>
   &emsp;   |-->alimentador-automatico.ino<br>
   &emsp;   |-->Base64.cpp<br>
