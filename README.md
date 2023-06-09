@@ -56,8 +56,8 @@ Aqui estão as referências usadas no projeto.
 
 1. Sensor de distância: <https://blog.eletrogate.com/sensor-ultrassonico-hc-sr04-com-arduino/>
 2. Motor de passo: <https://blog.eletrogate.com/guia-completo-do-motor-de-passo-28byj-48-driver-uln2003/>
-3. Google Drive: <https://www.youtube.com/watch?v=zb7uJlHewAI&ab_channel=UtehStr>
-4. Pinout ESP32-CAM: <https://randomnerdtutorials.com/esp32-cam-ai-thinker-pinout/#:~:text=The%20ESP32%2DCAM%20comes%20with,CAM%20through%20the%205V%20pin.>
-5. Google Drive: <https://www.youtube.com/watch?v=zb7uJlHewAI>
+3. Pinout ESP32-CAM: <https://randomnerdtutorials.com/esp32-cam-ai-thinker-pinout/#:~:text=The%20ESP32%2DCAM%20comes%20with,CAM%20through%20the%205V%20pin.>
+4. Google Drive: <https://www.youtube.com/watch?v=zb7uJlHewAI&ab_channel=UtehStr>
+5. Google Drive: <https://www.makerhero.com/blog/tire-fotos-com-esp32-cam-e-armazene-no-google-drive/#:~:text=Depois%20de%20carregado%20o%20c%C3%B3digo,aproximadamente%208%20a%2010%20segundos>
 
 
