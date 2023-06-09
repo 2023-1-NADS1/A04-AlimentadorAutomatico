@@ -45,3 +45,5 @@ Fornecer alimentos seguros e saudáveis, fracionados regularmente para cachorros
 <b>src</b>: Pasta que contém o código fonte e o link para o Wokwi.
 
 <b>imagens</b>: Imagens da esquemetica do trabalho no Wokwi.
+
+<b>documentos</b>: Todos os documentos do trabalho estão nessa pasta.
