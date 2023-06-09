@@ -54,10 +54,10 @@ Fornecer alimentos seguros e saudáveis, fracionados regularmente para cachorros
 
 Aqui estão as referências usadas no projeto.
 
-1. <https://blog.eletrogate.com/sensor-ultrassonico-hc-sr04-com-arduino/>
-2. <https://blog.eletrogate.com/guia-completo-do-motor-de-passo-28byj-48-driver-uln2003/>
+1. Sensor de distância: <https://blog.eletrogate.com/sensor-ultrassonico-hc-sr04-com-arduino/>
+2. Motor de passo: <https://blog.eletrogate.com/guia-completo-do-motor-de-passo-28byj-48-driver-uln2003/>
 3. Google Drive: <https://www.youtube.com/watch?v=zb7uJlHewAI&ab_channel=UtehStr>
-4. Pinout ESP32-CAM <https://randomnerdtutorials.com/esp32-cam-ai-thinker-pinout/#:~:text=The%20ESP32%2DCAM%20comes%20with,CAM%20through%20the%205V%20pin.>
+4. Pinout ESP32-CAM: <https://randomnerdtutorials.com/esp32-cam-ai-thinker-pinout/#:~:text=The%20ESP32%2DCAM%20comes%20with,CAM%20through%20the%205V%20pin.>
 5. Google Drive: <https://www.youtube.com/watch?v=zb7uJlHewAI>
 
 
