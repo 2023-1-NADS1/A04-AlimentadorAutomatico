@@ -257,6 +257,12 @@ void loop() {
     while (millis() < comecoTempo2 + intervalo2) {
       // Nao ha codigo aqui, apenas uma pausa de 30s (tempo para o cachorro comer e nao ser detectado pelo sensor, evitando a liberacao de racao sem parar).
     }
+  } else {
+    // Desliga o motor enquanto não estiver usando ele.
+    digitalWrite(2, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(14, LOW);
+    digitalWrite(15, LOW);
   }
   
 } 
